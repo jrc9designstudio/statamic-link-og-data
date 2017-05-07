@@ -6,11 +6,6 @@ use Statamic\Extend\Fieldtype;
 
 class LinkOgDataFieldtype extends Fieldtype
 {
-    protected function init()
-    {
-        $this->linkogdata = new LinkOgData;
-    }
-
     /**
      * The blank/default value
      *
@@ -42,14 +37,6 @@ class LinkOgDataFieldtype extends Fieldtype
      */
     public function process($data)
     {
-        $url = $data['url'];
-
-	$data = [
-            'url' => $data['url'],
-        ];
-
-        $result = $this->linkogdata->getOgData($url);
-
-        return array_merge($data, $result);
+        return $data;
     }
 }
