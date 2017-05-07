@@ -1,0 +1,22 @@
+.link-og-data-preview { padding: 0; }
+@media (min-width: 648px) {
+  .link-og-data-preview { display: flex; }
+}
+
+.link-og-data-preview-image img {
+  width: 100%;
+  height: auto;
+}
+
+.link-og-data-preview-text {
+  margin-top: -5px;
+  padding: 0 10px 10px 10px;
+}
+@media (min-width: 1024px) {
+  .link-og-data-preview-text {
+    margin-top: 0;
+    padding: 0 15px 15px 15px;
+  }
+}
+.link-og-data-preview-tex h2,
+.link-og-data-preview-text p { max-width: 30em; }
