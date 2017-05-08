@@ -22,6 +22,9 @@ The data is stored (and thus not dynamic or real time). If `title`, `description
 ```
 link:
   url: https://wondereur.com
+  title: Your access to cutting-edge international artists • Wondereur
+  description: |
+    Wondereur is a ground-breaking cultural platform reinventing how we relate to art. Discover, experience, invest. Worldwide.
   og:
     title: Your access to cutting-edge international artists • Wondereur
     description: |
@@ -35,9 +38,6 @@ link:
     image_height: "342"
   twitter:
     site: @wondereur
-    title: Your access to cutting-edge international artists • Wondereur
-    description: |
-      Wondereur is a ground-breaking cultural platform reinventing how we relate to art. Discover, experience, invest. Worldwide.
 ```
 
 ## Tag
