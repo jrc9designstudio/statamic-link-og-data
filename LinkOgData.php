@@ -18,7 +18,8 @@ class LinkOgData extends Addon
             return [];
 	}
 
-	if (!checkdnsrr(parse_url($url)['host'], 'A') && !checkdnsrr(parse_url($url)['host'], 'CNAME'))
+	if (!checkdnsrr(parse_url($url)['host'], 'A') &&
+            !checkdnsrr(parse_url($url)['host'], 'CNAME'))
         {
             return [];
         }

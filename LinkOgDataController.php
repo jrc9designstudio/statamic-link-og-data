@@ -20,21 +20,18 @@ class LinkOgDataController extends Controller
      */
     public function index()
     {
-        $user = User::getCurrent();
-
-        if ($user && $user->can('cp:access'))
+        if ($this->request->user() === null ||
+            $this->request->user()->cant('cp:access'))
         {
-            if ($url = Request::get('url', false))
-            {
-                $result = $this->linkogdata->getOgData($url);
-
-                if (count($result) > 0)
-                {
-                    return $result;
-                }
-            }
-
             abort(404);
+        }
+
+        if ($url = Request::get('url', false))
+        {
+            if (count($result = $this->linkogdata->getOgData($url)) > 0)
+            {
+                return $result;
+            }
         }
 
         abort(404);
