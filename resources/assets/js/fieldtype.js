@@ -68,28 +68,16 @@ Vue.component('link_og_data-fieldtype', {
                   this.ajax.abort();
                 }
 
-                $.ajaxSetup({
-                  cache: false,
-                  contentType: 'application/json; charset=utf-8',
-                  crossDomain: false,
-                  dataType : 'json',
-                  global: false,
-                  timeout: 10000,
-                  type: 'GET'
-                });
+                this.data = {
+                    url: this.getUrl
+                };
 
                 this.ajax = $.ajax({
                     url: Statamic.cpRoot + '/addons/linkogdata?url=' + encodeURIComponent(this.getUrl)
                 }).done(function(data) {
-                    that.data = {
-                        url: that.getUrl
-                    };
                     that.data = Object.assign(that.data, data);
                     that.error = false;
                 }).fail(function() {
-                    that.data = {
-                        url: that.getUrl
-                    };
                     that.error = translate("addons.LinkOgData::settings.fetch_error");
                 }).always(function() {
                     that.loading = false;
@@ -105,6 +93,16 @@ Vue.component('link_og_data-fieldtype', {
     },
 
     ready: function() {
+        $.ajaxSetup({
+            cache: false,
+            contentType: 'application/json; charset=utf-8',
+            crossDomain: false,
+            dataType : 'json',
+            global: false,
+            timeout: 10000,
+            type: 'GET'
+        });
+
         // Update the data as soon as Vue is ready.
         this.getData();
     },

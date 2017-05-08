@@ -24,14 +24,17 @@ class LinkOgDataController extends Controller
 
         if ($user && $user->can('cp:access'))
         {
-            $url = Request::get('url', false);
-
-            if ($url)
+            if ($url = Request::get('url', false))
             {
-                return $this->linkogdata->getOgData($url);
+                $result = $this->linkogdata->getOgData($url);
+
+                if (count($result) > 0)
+                {
+                    return $result;
+                }
             }
 
-            return [];
+            abort(404);
         }
 
         abort(404);

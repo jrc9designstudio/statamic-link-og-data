@@ -18,8 +18,13 @@ class LinkOgData extends Addon
             return [];
 	}
 
+	if (!checkdnsrr(parse_url($url)['host'], 'A') && !checkdnsrr(parse_url($url)['host'], 'CNAME'))
+        {
+            return [];
+        }
+
         // create http client instance
-        $client = new Client();
+        $client = new Client(['http_errors' => false]);
 
         // Make an async request
         $request = new Request('GET', $url);
@@ -29,6 +34,11 @@ class LinkOgData extends Addon
         ];
 
         $response = $client->send($request);
+
+        if ($response->getStatusCode() != 200)
+        {
+            return [];
+        }
 
         $crawler = new Crawler(mb_convert_encoding($response->getBody()->getContents(), 'HTML-ENTITIES', "UTF-8"));
 
