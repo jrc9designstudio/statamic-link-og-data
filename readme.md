@@ -3,12 +3,12 @@
 *Version:* 1.0.1
 
 ## What is this?
-A field type and tag for obtaining and presenting meta tags, open graph tags and twitter cards from in your templates.
+A field type and tag for obtaining and presenting meta tags, open graph tags, and twitter cards sourced from your templates.
 
 ## Installation
 - Rename the folder `LinkOgData` and copy it to your `site/addons` folder
 
-*Note:* The specific meta data available depends on what the website supplies. When using this data you should take into account that it may not exist.
+*Note:* The specific meta data available depends on what the website supplies. When using this data, you should take into account that it may not exist.
 
 ## Field Type
 - Add the field type to one of your fieldsets
@@ -16,7 +16,7 @@ A field type and tag for obtaining and presenting meta tags, open graph tags and
 - Use the data in one of your templates
 
 ### Data Storage
-The data is stored (and thus not dynamic or real time). `title`, `description`, `author`, and `keywords` if available are stored at the top level. Open Graph and Twitter cards are stored within `og` and `twitter` fields respectively. All available Open Graph and Twitter tags are saved, replacing any addtional `:`'s with `_`'s.
+The data is stored (and thus not dynamic or real time). If `title`, `description`, `author`, and `keywords` are available, they are stored at the top level. Open Graph and Twitter cards are stored within `og` and `twitter` fields respectively. All available Open Graph and Twitter tags are saved, replacing any addtional `:`'s with `_`'s.
 
 *Sample:*
 ```
@@ -41,9 +41,9 @@ link:
 ```
 
 ## Tag
-When you need more real time meta data you can use the tag to fetch meta data in real time.
+When you need more real time meta data, you can use the tag to fetch meta data in real time.
 
-*Note:* If you do not use any additional caching a request for the meta data will be made on each page request. This could slow down your website and may be frowned down upon by the remote site.
+*Note:* If you do not use any additional caching a request for the meta data will be made on each page request. This could slow down your website and may be frowned upon by the remote site.
 
 It would be good practice to at least wrap your tag in a `{{ cache }}` tag pair.
 
