@@ -35,9 +35,9 @@ link:
     image_height: "342"
   twitter:
     site: @wondereur
-  title: Your access to cutting-edge international artists • Wondereur
-  description: |
-    Wondereur is a ground-breaking cultural platform reinventing how we relate to art. Discover, experience, invest. Worldwide.
+    title: Your access to cutting-edge international artists • Wondereur
+    description: |
+      Wondereur is a ground-breaking cultural platform reinventing how we relate to art. Discover, experience, invest. Worldwide.
 ```
 
 ## Tag
