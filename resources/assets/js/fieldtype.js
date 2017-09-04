@@ -73,7 +73,7 @@ Vue.component('link_og_data-fieldtype', {
                 };
 
                 this.ajax = $.ajax({
-                    url: Statamic.cpRoot + '/addons/linkogdata?url=' + encodeURIComponent(this.getUrl)
+                    url: Statamic.cpRoot + '/addons/link-og-data?url=' + encodeURIComponent(this.getUrl)
                 }).done(function(data) {
                     that.data = Object.assign(that.data, data);
                     that.error = false;

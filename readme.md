@@ -1,6 +1,6 @@
 # Open Graph Link Data for Statamic
-*Requirement:* Statamic v2.5.x, php-xml  
-*Version:* 1.0.1
+*Requirement:* Statamic v2.6.x, php-xml  
+*Version:* 1.0.2
 
 ## What is this?
 A field type and tag for obtaining and presenting meta tags, open graph tags, and twitter cards sourced from your templates.
@@ -60,5 +60,6 @@ It would be good practice to at least wrap your tag in a `{{ cache }}` tag pair.
 ```
 
 ## Version Log
+- 1.0.2 Fix for Statamic 2.6.x addon / route changes
 - 1.0.1 Slight refactor & better handeling of lookup errors
 - 1.0.0 Initial release

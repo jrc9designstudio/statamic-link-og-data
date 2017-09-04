@@ -2,12 +2,12 @@
 
 namespace Statamic\Addons\LinkOgData;
 
-use Statamic\Extend\Addon;
+use Statamic\Extend\Extensible;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use Symfony\Component\DomCrawler\Crawler;
 
-class LinkOgData extends Addon
+class LinkOgData
 {
     public function getOgData($url) {
 	// Remove all illegal characters from a url
@@ -18,8 +18,9 @@ class LinkOgData extends Addon
             return [];
 	}
 
-	if (!checkdnsrr(parse_url($url)['host'], 'A') &&
-            !checkdnsrr(parse_url($url)['host'], 'CNAME'))
+    if (!isset(parse_url($url)['host']) ||
+            (!checkdnsrr(parse_url($url)['host'], 'A') &&
+            !checkdnsrr(parse_url($url)['host'], 'CNAME')))
         {
             return [];
         }
