@@ -58,8 +58,13 @@ It would be good practice to at least wrap your tag in a `{{ cache }}` tag pair.
     <img src="{{ og:image }}" />
 {{ /link_og_data }}
 ```
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/eNH4J7YAub4Y19PG8yjyuzLu/jrc9designstudio/statamic-link-og-data'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/eNH4J7YAub4Y19PG8yjyuzLu/jrc9designstudio/statamic-link-og-data.svg' />
+</a>
 
 ## Version Log
 - 1.0.2 Fix for Statamic 2.6.x addon / route changes
 - 1.0.1 Slight refactor & better handeling of lookup errors
 - 1.0.0 Initial release
+
+Made with ❤️ by [JRC9 Design Studio](https://jrc9.ca)
