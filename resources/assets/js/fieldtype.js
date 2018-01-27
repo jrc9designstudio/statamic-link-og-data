@@ -44,7 +44,7 @@ Vue.component('link_og_data-fieldtype', {
         },
         isValid: function() {
             // Is this link even posibly valid?
-            return (this.getUrl.startsWith('http:\/\/') || this.getUrl.startsWith('https:\/\/')) && this.getUrl.length > 7 && this.getUrl.includes('.') && this.getUrl.split('.').slice(-1)[0].length > 0;
+            return this.getUrl.length > 2;
         },
         isntBlank: function() {
             // Make sure the field is not blank

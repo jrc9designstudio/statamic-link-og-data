@@ -13,6 +13,18 @@ class LinkOgData
 	// Remove all illegal characters from a url
 	$url = filter_var($url, FILTER_SANITIZE_URL);
 
+    // Are we looking at a url on this server?
+    if (preg_match("/^\//", $url))
+    {
+        $url = $_SERVER['HTTP_HOST'] . $url;
+    }
+
+    // // Make sure we have a protocol
+    if (!preg_match("/^http(s)?:\/\//", $url))
+    {
+        $url = 'http://' . $url;
+    }
+
 	if (!filter_var($url, FILTER_VALIDATE_URL))
 	{
             return [];
@@ -35,7 +47,11 @@ class LinkOgData
             'twitter' => [],
         ];
 
-        $response = $client->send($request);
+        try {
+            $response = $client->send($request);
+        } catch (\Exception $ex) {
+            return [];
+        }
 
         if ($response->getStatusCode() != 200)
         {

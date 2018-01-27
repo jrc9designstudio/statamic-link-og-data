@@ -20,8 +20,8 @@ class LinkOgDataController extends Controller
      */
     public function index()
     {
-        if ($this->request->user() === null ||
-            $this->request->user()->cant('cp:access'))
+        if (request()->user() === null ||
+            request()->user()->cant('cp:access'))
         {
             abort(404);
         }
