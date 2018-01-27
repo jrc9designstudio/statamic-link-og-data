@@ -37,7 +37,7 @@ class LinkOgDataFieldtype extends Fieldtype
      */
     public function process($data)
     {
-        if (!preg_match("/^http(s)?:\/\//", $data['url']) && !preg_match("/^\//", $data['url']))
+        if ($data['url'] && !preg_match("/^http(s)?:\/\//", $data['url']) && !preg_match("/^\//", $data['url']))
         {
             $data['url'] = 'http://' . $data['url'];
         }
