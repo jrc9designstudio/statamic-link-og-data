@@ -61,7 +61,7 @@ class LinkOgData
         $crawler = new Crawler(mb_convert_encoding($response->getBody()->getContents(), 'HTML-ENTITIES', "UTF-8"));
 
 	// Title
-        $result['title'] = $crawler->filter('title')->text();
+        $result['title'] = ($crawler->filter('title')->count() > 0) ? $crawler->filter('title')->text() : '';
 
 	// Other meta tags including description, keywords and author
         $meta = $crawler->filter('meta[name="description"], meta[name="keywords"], meta[name="author"]');
