@@ -3,6 +3,9 @@
   .link-og-data-preview { display: flex; }
 }
 
+@media (min-width: 648px) {
+  .link-og-data-preview-image { max-width: 40%; }
+}
 .link-og-data-preview-image img {
   width: 100%;
   height: auto;
